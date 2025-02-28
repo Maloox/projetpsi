@@ -24,12 +24,12 @@ CREATE TABLE Client(
    Nom VARCHAR(50),
    Prenom VARCHAR(50),
    Rue VARCHAR(50),
+   Metro VARCHAR(50),
    Numero INT,
    CodePostal INT,
    Ville VARCHAR(50),
    Tel INT,
    Email VARCHAR(50),
-   Metro VARCHAR(50),
    Code_Cuisinier VARCHAR(50),
    PRIMARY KEY(Code_Client),
    UNIQUE(Code_Cuisinier),
@@ -45,6 +45,11 @@ CREATE TABLE Entreprise_local(
 CREATE TABLE Ingrédient(
    Nom_I VARCHAR(50),
    PRIMARY KEY(Nom_I)
+);
+
+CREATE TABLE Radié(
+   Code_Cl VARCHAR(50),
+   PRIMARY KEY(Code_Cl)
 );
 
 CREATE TABLE Avis(
@@ -102,3 +107,14 @@ CREATE TABLE est_livré(
    FOREIGN KEY(Nom_P) REFERENCES Plat(Nom_P),
    FOREIGN KEY(Code_Cuisinier) REFERENCES Cuisinier(Code_Cuisinier)
 );
+
+CREATE TABLE est_radié(
+   Code_Client INT,
+   Référence VARCHAR(50),
+   Code_Cl VARCHAR(50),
+   PRIMARY KEY(Code_Client, Référence, Code_Cl),
+   FOREIGN KEY(Code_Client) REFERENCES Client(Code_Client),
+   FOREIGN KEY(Référence) REFERENCES Entreprise_local(Référence),
+   FOREIGN KEY(Code_Cl) REFERENCES Radié(Code_Cl)
+);
+
