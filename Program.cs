@@ -58,10 +58,7 @@ class Program
 
             // Nombre de nœuds
             int n = 34;
-
-            // Exemple de matrice d'adjacence (remplacez ceci par votre matrice)
             
-
             // Rayon du cercle pour positionner les nœuds
             float radius = Math.Min(width, height) * 0.4f;
             SKPoint center = new SKPoint(width / 2, height / 2);
