@@ -14,6 +14,11 @@ CREATE TABLE Plat(
    PRIMARY KEY(Nom_P)
 );
 
+CREATE TABLE PlatDuJour (
+    Nom_P VARCHAR(50) PRIMARY KEY
+);
+
+
 CREATE TABLE Cuisinier(
    Code_Cuisinier VARCHAR(50),
    PRIMARY KEY(Code_Cuisinier)
@@ -24,17 +29,18 @@ CREATE TABLE Client(
    Nom VARCHAR(50),
    Prenom VARCHAR(50),
    Rue VARCHAR(50),
-   Metro VARCHAR(50),
+   Id_Metro INT,
    Numero INT,
    CodePostal INT,
    Ville VARCHAR(50),
    Tel INT,
    Email VARCHAR(50),
    Code_Cuisinier VARCHAR(50),
+   MontantAchats INTEGER DEFAULT 0,
    PRIMARY KEY(Code_Client),
-   UNIQUE(Code_Cuisinier),
    FOREIGN KEY(Code_Cuisinier) REFERENCES Cuisinier(Code_Cuisinier)
 );
+
 
 CREATE TABLE Entreprise_local(
    Référence VARCHAR(50),
@@ -67,10 +73,12 @@ CREATE TABLE Avis(
 CREATE TABLE est_cuisiné(
    Nom_P VARCHAR(50),
    Code_Cuisinier VARCHAR(50),
+   Quantité INT,  -- Nouvelle colonne pour la quantité de plats cuisinés
    PRIMARY KEY(Nom_P, Code_Cuisinier),
    FOREIGN KEY(Nom_P) REFERENCES Plat(Nom_P),
    FOREIGN KEY(Code_Cuisinier) REFERENCES Cuisinier(Code_Cuisinier)
 );
+
 
 CREATE TABLE est_commandé(
    Nom_P VARCHAR(50),
@@ -85,6 +93,7 @@ CREATE TABLE est_commandé(
 CREATE TABLE est_approvisioné(
    Nom_P VARCHAR(50),
    Référence VARCHAR(50),
+   Quantité VARCHAR(50),
    PRIMARY KEY(Nom_P, Référence),
    FOREIGN KEY(Nom_P) REFERENCES Plat(Nom_P),
    FOREIGN KEY(Référence) REFERENCES Entreprise_local(Référence)
