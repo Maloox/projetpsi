@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gerva\\source\\repos\\projeta2\\projeta2\\projeta2.csproj": {}
+    "C:\\Users\\gerva\\Documents\\GitHub\\projetpsi\\projeta2\\projeta2\\projeta2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gerva\\source\\repos\\projeta2\\projeta2\\projeta2.csproj": {
+    "C:\\Users\\gerva\\Documents\\GitHub\\projetpsi\\projeta2\\projeta2\\projeta2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gerva\\source\\repos\\projeta2\\projeta2\\projeta2.csproj",
+        "projectUniqueName": "C:\\Users\\gerva\\Documents\\GitHub\\projetpsi\\projeta2\\projeta2\\projeta2.csproj",
         "projectName": "projeta2",
-        "projectPath": "C:\\Users\\gerva\\source\\repos\\projeta2\\projeta2\\projeta2.csproj",
+        "projectPath": "C:\\Users\\gerva\\Documents\\GitHub\\projetpsi\\projeta2\\projeta2\\projeta2.csproj",
         "packagesPath": "C:\\Users\\gerva\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gerva\\source\\repos\\projeta2\\projeta2\\obj\\",
+        "outputPath": "C:\\Users\\gerva\\Documents\\GitHub\\projetpsi\\projeta2\\projeta2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gerva\\AppData\\Roaming\\NuGet\\NuGet.Config",
