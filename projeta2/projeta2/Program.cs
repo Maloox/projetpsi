@@ -208,9 +208,24 @@ using MySqlX.XDevAPI.Common;
             }
         }
 
-        static void AjouterClient()
+    static void AjouterClient()
+    {
+        int nouveauCodeClient = 1;
+
+        using (MySqlConnection conn = new MySqlConnection(chaineConnexion))
         {
-            Console.Write("Code_Client : "); string Code_Client = Console.ReadLine();
+            conn.Open();
+
+            string requeteMaxId = "SELECT MAX(Code_Client) FROM Client";
+            using (MySqlCommand cmdMax = new MySqlCommand(requeteMaxId, conn))
+            {
+                object resultat = cmdMax.ExecuteScalar();
+                if (resultat != DBNull.Value && resultat != null)
+                {
+                    nouveauCodeClient = Convert.ToInt32(resultat) + 1;
+                }
+            }
+
             Console.Write("Nom : "); string nom = Console.ReadLine();
             Console.Write("Prénom : "); string prenom = Console.ReadLine();
             Console.Write("Rue : "); string rue = Console.ReadLine();
@@ -219,28 +234,27 @@ using MySqlX.XDevAPI.Common;
             Console.Write("Téléphone : "); int tel = int.Parse(Console.ReadLine());
             Console.Write("Email : "); string email = Console.ReadLine();
 
-            using (MySqlConnection conn = new MySqlConnection(chaineConnexion))
-            {
-                string requete = "INSERT INTO Client (Code_Client, Nom, Prenom, Rue, Ville, CodePostal, Tel, Email, MontantAchats) VALUES (@Code_Client, @Nom, @Prenom, @Rue, @Ville, @CodePostal, @Tel, @Email, 0)";
-                using (MySqlCommand cmd = new MySqlCommand(requete, conn))
-                {
-                    cmd.Parameters.AddWithValue("@Code_Client", Code_Client);
-                    cmd.Parameters.AddWithValue("@Nom", nom);
-                    cmd.Parameters.AddWithValue("@Prenom", prenom);
-                    cmd.Parameters.AddWithValue("@Rue", rue);
-                    cmd.Parameters.AddWithValue("@Ville", ville);
-                    cmd.Parameters.AddWithValue("@CodePostal", codePostal);
-                    cmd.Parameters.AddWithValue("@Tel", tel);
-                    cmd.Parameters.AddWithValue("@Email", email);
+            string requeteInsert = "INSERT INTO Client (Code_Client, Nom, Prenom, Rue, Ville, CodePostal, Tel, Email, MontantAchats) " +
+                                   "VALUES (@Code_Client, @Nom, @Prenom, @Rue, @Ville, @CodePostal, @Tel, @Email, 0)";
 
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    Console.WriteLine("Client ajouté avec succès.");
-                }
+            using (MySqlCommand cmd = new MySqlCommand(requeteInsert, conn))
+            {
+                cmd.Parameters.AddWithValue("@Code_Client", nouveauCodeClient);
+                cmd.Parameters.AddWithValue("@Nom", nom);
+                cmd.Parameters.AddWithValue("@Prenom", prenom);
+                cmd.Parameters.AddWithValue("@Rue", rue);
+                cmd.Parameters.AddWithValue("@Ville", ville);
+                cmd.Parameters.AddWithValue("@CodePostal", codePostal);
+                cmd.Parameters.AddWithValue("@Tel", tel);
+                cmd.Parameters.AddWithValue("@Email", email);
+
+                cmd.ExecuteNonQuery();
+                Console.WriteLine($"Client ajouté avec succès. Code_Client : {nouveauCodeClient}");
             }
         }
+    }
 
-        static void SupprimerClient()
+    static void SupprimerClient()
         {
             Console.Write("Entrez le Nom du client à supprimer : ");
             string nom = Console.ReadLine();
@@ -323,12 +337,23 @@ using MySqlX.XDevAPI.Common;
             }
         }
 
-        // fonction pour ajouter un cuisinier
-        static void AjouterCuisinier()
+    // fonction pour ajouter un cuisinier
+    static void AjouterCuisinier()
+    {
+        using (MySqlConnection conn = new MySqlConnection(chaineConnexion))
         {
-            // creer le client
-            Console.Write("Entrez le Code_Client : ");
-            string codeClient = Console.ReadLine();
+            conn.Open();
+
+            int nouveauCodeClient = 1;
+            string requeteDernierClient = "SELECT MAX(Code_Client) FROM Client";
+            using (MySqlCommand cmd = new MySqlCommand(requeteDernierClient, conn))
+            {
+                var result = cmd.ExecuteScalar();
+                if (result != DBNull.Value)
+                {
+                    nouveauCodeClient = Convert.ToInt32(result) + 1;
+                }
+            }
 
             Console.Write("Entrez le Nom du client : ");
             string nomClient = Console.ReadLine();
@@ -351,67 +376,53 @@ using MySqlX.XDevAPI.Common;
             Console.Write("Entrez l'email du client : ");
             string emailClient = Console.ReadLine();
 
-            // inserer le client dans la base de donnees
-            using (MySqlConnection conn = new MySqlConnection(chaineConnexion))
+            string requeteClient = @"
+        INSERT INTO Client (Code_Client, Nom, Prenom, Rue, CodePostal, Ville, Tel, Email, MontantAchats)
+        VALUES (@Code_Client, @Nom, @Prenom, @Rue, @CodePostal, @Ville, @Tel, @Email, 0)";
+
+            using (MySqlCommand cmd = new MySqlCommand(requeteClient, conn))
             {
-                string requeteClient = @"
-                INSERT INTO Client (Code_Client, Nom, Prenom, Rue, CodePostal, Ville, Tel, Email, MontantAchats)
-                VALUES (@Code_Client, @Nom, @Prenom, @Rue, @CodePostal, @Ville, @Tel, @Email, @MontantAchats)";
+                cmd.Parameters.AddWithValue("@Code_Client", nouveauCodeClient);
+                cmd.Parameters.AddWithValue("@Nom", nomClient);
+                cmd.Parameters.AddWithValue("@Prenom", prenomClient);
+                cmd.Parameters.AddWithValue("@Rue", rueClient);
+                cmd.Parameters.AddWithValue("@CodePostal", codePostalClient);
+                cmd.Parameters.AddWithValue("@Ville", villeClient);
+                cmd.Parameters.AddWithValue("@Tel", telClient);
+                cmd.Parameters.AddWithValue("@Email", emailClient);
 
-                using (MySqlCommand cmd = new MySqlCommand(requeteClient, conn))
-                {
-                    cmd.Parameters.AddWithValue("@Code_Client", codeClient);
-                    cmd.Parameters.AddWithValue("@Nom", nomClient);
-                    cmd.Parameters.AddWithValue("@Prenom", prenomClient);
-                    cmd.Parameters.AddWithValue("@Rue", rueClient);
-                    cmd.Parameters.AddWithValue("@CodePostal", codePostalClient);
-                    cmd.Parameters.AddWithValue("@Ville", villeClient);
-                    cmd.Parameters.AddWithValue("@Tel", telClient);
-                    cmd.Parameters.AddWithValue("@Email", emailClient);
-                    cmd.Parameters.AddWithValue("@MontantAchats", 0);
-
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    Console.WriteLine("Client créé avec succès.");
-                }
+                cmd.ExecuteNonQuery();
+                Console.WriteLine($"Client créé avec succès (Code_Client: {nouveauCodeClient}).");
             }
 
-            //creer le cuisinier et associer cuisinier
-            Console.Write("Entrez le Code_Cuisinier : ");
-            string codeCuisinier = Console.ReadLine();
+            string codeCuisinier = "" + nouveauCodeClient;
 
-            // inserer le cuisinier dans la base de donnees
-            using (MySqlConnection conn = new MySqlConnection(chaineConnexion))
+            string requeteCuisinier = "INSERT INTO Cuisinier (Code_Cuisinier) VALUES (@Code_Cuisinier)";
+            using (MySqlCommand cmd = new MySqlCommand(requeteCuisinier, conn))
             {
-                string requeteCuisinier = "INSERT INTO Cuisinier (Code_Cuisinier) VALUES (@Code_Cuisinier)";
-                using (MySqlCommand cmd = new MySqlCommand(requeteCuisinier, conn))
-                {
-                    cmd.Parameters.AddWithValue("@Code_Cuisinier", codeCuisinier);
+                cmd.Parameters.AddWithValue("@Code_Cuisinier", codeCuisinier);
+                cmd.ExecuteNonQuery();
+                Console.WriteLine($"Cuisinier créé avec succès (Code_Cuisinier: {codeCuisinier}).");
+            }
 
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    Console.WriteLine("Cuisinier créé avec succès.");
-                }
+            string requeteAssocier = @"
+        UPDATE Client 
+        SET Code_Cuisinier = @Code_Cuisinier 
+        WHERE Code_Client = @Code_Client";
 
-                //associer le client au cuisinier
-                string requeteAssocier = @"
-                UPDATE Client 
-                SET Code_Cuisinier = @Code_Cuisinier 
-                WHERE Code_Client = @Code_Client";
-
-                using (MySqlCommand cmd = new MySqlCommand(requeteAssocier, conn))
-                {
-                    cmd.Parameters.AddWithValue("@Code_Cuisinier", codeCuisinier);
-                    cmd.Parameters.AddWithValue("@Code_Client", codeClient);
-
-                    cmd.ExecuteNonQuery();
-                    Console.WriteLine("Le client a été associé au cuisinier.");
-                }
+            using (MySqlCommand cmd = new MySqlCommand(requeteAssocier, conn))
+            {
+                cmd.Parameters.AddWithValue("@Code_Cuisinier", codeCuisinier);
+                cmd.Parameters.AddWithValue("@Code_Client", nouveauCodeClient);
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Le client a été associé au cuisinier.");
             }
         }
+    }
 
-        // fonction pour modifier un cuisinier et son client associe
-        static void ModifierCuisinier()
+
+    // fonction pour modifier un cuisinier et son client associe
+    static void ModifierCuisinier()
         {
             Console.Write("Entrez le Code_Cuisinier à modifier : ");
             string codeCuisinier = Console.ReadLine();

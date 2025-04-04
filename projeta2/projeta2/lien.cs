@@ -16,6 +16,8 @@ namespace projeta2
         private int temps;
         private Sommet<T> sommet1;
         private Sommet<T> sommet2;
+        private string valeur1;
+        private string valeur2;
 
         /// <summary>
         /// initialise un nouveau lien entre deux sommets existants
@@ -34,6 +36,13 @@ namespace projeta2
         {
             sommet1 = new Sommet<T>(valeur1);
             sommet2 = new Sommet<T>(valeur2);
+            this.temps = temps;
+        }
+
+        public Lien(string valeur1, string valeur2, int temps)
+        {
+            this.valeur1 = valeur1;
+            this.valeur2 = valeur2;
             this.temps = temps;
         }
 

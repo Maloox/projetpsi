@@ -1,0 +1,6 @@
+C:\Users\gerva\Documents\GitHub\projetpsi\projeta2\TestUnitaire\bin\Debug\net7.0\CoverletSourceRootsMapping
+C:\Users\gerva\Documents\GitHub\projetpsi\projeta2\TestUnitaire\obj\Debug\net7.0\TestUnitaire.csproj.AssemblyReference.cache
+C:\Users\gerva\Documents\GitHub\projetpsi\projeta2\TestUnitaire\obj\Debug\net7.0\TestUnitaire.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gerva\Documents\GitHub\projetpsi\projeta2\TestUnitaire\obj\Debug\net7.0\TestUnitaire.AssemblyInfoInputs.cache
+C:\Users\gerva\Documents\GitHub\projetpsi\projeta2\TestUnitaire\obj\Debug\net7.0\TestUnitaire.AssemblyInfo.cs
+C:\Users\gerva\Documents\GitHub\projetpsi\projeta2\TestUnitaire\obj\Debug\net7.0\TestUnitaire.csproj.CoreCompileInputs.cache
