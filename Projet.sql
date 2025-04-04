@@ -126,3 +126,15 @@ CREATE TABLE est_radié(
    FOREIGN KEY(Référence) REFERENCES Entreprise_local(Référence),
    FOREIGN KEY(Code_Cl) REFERENCES Radié(Code_Cl)
 );
+
+DROP USER IF EXISTS 'client_user'@'localhost';
+CREATE USER 'client_user'@'localhost' IDENTIFIED BY 'client_password';
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON PSI.Client TO 'client_user'@'localhost';
+GRANT SELECT, INSERT, UPDATE, DELETE ON PSI.est_commandé TO 'client_user'@'localhost';
+
+DROP USER IF EXISTS 'cuisinier_user'@'localhost';
+CREATE USER 'cuisinier_user'@'localhost' IDENTIFIED BY 'cuisinier_password';
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON PSI.Cuisinier TO 'cuisinier_user'@'localhost';
+GRANT SELECT, INSERT, UPDATE, DELETE ON PSI.est_cuisiné TO 'cuisinier_user'@'localhost';
