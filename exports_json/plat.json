@@ -1,0 +1,152 @@
+[
+    {
+        "Nom_P": "Boeuf Bourguignon",
+        "Nb_personnes": null,
+        "Date_Fabrication": "18/01/2025",
+        "Type": "Plat",
+        "Date_péremption": "23/01/2025",
+        "Prix": "11",
+        "Régime": null,
+        "Nature": "Française"
+    },
+    {
+        "Nom_P": "Couscous Royal",
+        "Nb_personnes": null,
+        "Date_Fabrication": "16/01/2025",
+        "Type": "Plat",
+        "Date_péremption": "21/01/2025",
+        "Prix": "12",
+        "Régime": null,
+        "Nature": "Maghrébine"
+    },
+    {
+        "Nom_P": "Crème Brûlée",
+        "Nb_personnes": null,
+        "Date_Fabrication": "18/01/2025",
+        "Type": "Dessert",
+        "Date_péremption": "23/01/2025",
+        "Prix": "6",
+        "Régime": null,
+        "Nature": "Française"
+    },
+    {
+        "Nom_P": "Flan Pâtissier",
+        "Nb_personnes": null,
+        "Date_Fabrication": "22/01/2025",
+        "Type": "Dessert",
+        "Date_péremption": "27/01/2025",
+        "Prix": "4",
+        "Régime": null,
+        "Nature": "Française"
+    },
+    {
+        "Nom_P": "Mousse au Chocolat",
+        "Nb_personnes": null,
+        "Date_Fabrication": "20/01/2025",
+        "Type": "Dessert",
+        "Date_péremption": "25/01/2025",
+        "Prix": "5",
+        "Régime": null,
+        "Nature": "Française"
+    },
+    {
+        "Nom_P": "Paella Valenciana",
+        "Nb_personnes": null,
+        "Date_Fabrication": "22/01/2025",
+        "Type": "Plat",
+        "Date_péremption": "27/01/2025",
+        "Prix": "14",
+        "Régime": null,
+        "Nature": "Espagnole"
+    },
+    {
+        "Nom_P": "Pizza Margherita",
+        "Nb_personnes": null,
+        "Date_Fabrication": "14/01/2025",
+        "Type": "Plat",
+        "Date_péremption": "19/01/2025",
+        "Prix": "9",
+        "Régime": null,
+        "Nature": "Italienne"
+    },
+    {
+        "Nom_P": "Quiche Lorraine",
+        "Nb_personnes": null,
+        "Date_Fabrication": "12/01/2025",
+        "Type": "Plat",
+        "Date_péremption": "17/01/2025",
+        "Prix": "8",
+        "Régime": null,
+        "Nature": "Française"
+    },
+    {
+        "Nom_P": "Raclette",
+        "Nb_personnes": null,
+        "Date_Fabrication": "10/01/2025",
+        "Type": "Plat",
+        "Date_péremption": "15/01/2025",
+        "Prix": "10",
+        "Régime": null,
+        "Nature": "Française"
+    },
+    {
+        "Nom_P": "Salade de fruit",
+        "Nb_personnes": null,
+        "Date_Fabrication": "10/01/2025",
+        "Type": "Dessert",
+        "Date_péremption": "15/01/2025",
+        "Prix": "5",
+        "Régime": "Végétarien",
+        "Nature": "Indifférent"
+    },
+    {
+        "Nom_P": "Salade Niçoise",
+        "Nb_personnes": null,
+        "Date_Fabrication": "16/01/2025",
+        "Type": "Entrée",
+        "Date_péremption": "21/01/2025",
+        "Prix": "6",
+        "Régime": null,
+        "Nature": "Française"
+    },
+    {
+        "Nom_P": "Sushi Assortiment",
+        "Nb_personnes": null,
+        "Date_Fabrication": "20/01/2025",
+        "Type": "Plat",
+        "Date_péremption": "25/01/2025",
+        "Prix": "15",
+        "Régime": null,
+        "Nature": "Japonaise"
+    },
+    {
+        "Nom_P": "Tajine d'Agneau",
+        "Nb_personnes": null,
+        "Date_Fabrication": "24/01/2025",
+        "Type": "Plat",
+        "Date_péremption": "29/01/2025",
+        "Prix": "13",
+        "Régime": null,
+        "Nature": "Marocaine"
+    },
+    {
+        "Nom_P": "Tarte aux pommes",
+        "Nb_personnes": null,
+        "Date_Fabrication": "12/01/2025",
+        "Type": "Dessert",
+        "Date_péremption": "17/01/2025",
+        "Prix": "6",
+        "Régime": "Végétarien",
+        "Nature": "Indifférent"
+    },
+    {
+        "Nom_P": "Tiramisu",
+        "Nb_personnes": null,
+        "Date_Fabrication": "14/01/2025",
+        "Type": "Dessert",
+        "Date_péremption": "19/01/2025",
+        "Prix": "7",
+        "Régime": null,
+        "Nature": "Italienne"
+    }
+]

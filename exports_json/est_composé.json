@@ -1,0 +1,212 @@
+[
+    {
+        "Nom_P": "Boeuf Bourguignon",
+        "Nom_I": "boeuf",
+        "Quantité": "300g"
+    },
+    {
+        "Nom_P": "Boeuf Bourguignon",
+        "Nom_I": "carottes",
+        "Quantité": "100g"
+    },
+    {
+        "Nom_P": "Couscous Royal",
+        "Nom_I": "légumes",
+        "Quantité": "300g"
+    },
+    {
+        "Nom_P": "Couscous Royal",
+        "Nom_I": "semoule",
+        "Quantité": "200g"
+    },
+    {
+        "Nom_P": "Couscous Royal",
+        "Nom_I": "viande",
+        "Quantité": "200g"
+    },
+    {
+        "Nom_P": "Crème Brûlée",
+        "Nom_I": "crème fraîche",
+        "Quantité": "200g"
+    },
+    {
+        "Nom_P": "Crème Brûlée",
+        "Nom_I": "sucre",
+        "Quantité": "50g"
+    },
+    {
+        "Nom_P": "Flan Pâtissier",
+        "Nom_I": "oeufs",
+        "Quantité": "3p"
+    },
+    {
+        "Nom_P": "Flan Pâtissier",
+        "Nom_I": "sucre",
+        "Quantité": "100g"
+    },
+    {
+        "Nom_P": "Mousse au Chocolat",
+        "Nom_I": "chocolat",
+        "Quantité": "100g"
+    },
+    {
+        "Nom_P": "Mousse au Chocolat",
+        "Nom_I": "oeufs",
+        "Quantité": "2p"
+    },
+    {
+        "Nom_P": "Paella Valenciana",
+        "Nom_I": "poulet",
+        "Quantité": "200g"
+    },
+    {
+        "Nom_P": "Paella Valenciana",
+        "Nom_I": "riz",
+        "Quantité": "300g"
+    },
+    {
+        "Nom_P": "Paella Valenciana",
+        "Nom_I": "safran",
+        "Quantité": "1g"
+    },
+    {
+        "Nom_P": "Pizza Margherita",
+        "Nom_I": "basilic",
+        "Quantité": "5g"
+    },
+    {
+        "Nom_P": "Pizza Margherita",
+        "Nom_I": "mozzarella",
+        "Quantité": "150g"
+    },
+    {
+        "Nom_P": "Pizza Margherita",
+        "Nom_I": "tomates",
+        "Quantité": "100g"
+    },
+    {
+        "Nom_P": "Quiche Lorraine",
+        "Nom_I": "crème fraîche",
+        "Quantité": "200g"
+    },
+    {
+        "Nom_P": "Quiche Lorraine",
+        "Nom_I": "lardons",
+        "Quantité": "100g"
+    },
+    {
+        "Nom_P": "Quiche Lorraine",
+        "Nom_I": "oeufs",
+        "Quantité": "3p"
+    },
+    {
+        "Nom_P": "Raclette",
+        "Nom_I": "cornichon",
+        "Quantité": "3p"
+    },
+    {
+        "Nom_P": "Raclette",
+        "Nom_I": "jambon",
+        "Quantité": "200g"
+    },
+    {
+        "Nom_P": "Raclette",
+        "Nom_I": "pommes_de_terre",
+        "Quantité": "200g"
+    },
+    {
+        "Nom_P": "Raclette",
+        "Nom_I": "raclette fromage",
+        "Quantité": "250g"
+    },
+    {
+        "Nom_P": "Salade de fruit",
+        "Nom_I": "fraise",
+        "Quantité": "100g"
+    },
+    {
+        "Nom_P": "Salade de fruit",
+        "Nom_I": "kiwi",
+        "Quantité": "100g"
+    },
+    {
+        "Nom_P": "Salade de fruit",
+        "Nom_I": "sucre",
+        "Quantité": "10g"
+    },
+    {
+        "Nom_P": "Salade Niçoise",
+        "Nom_I": "haricots verts",
+        "Quantité": "100g"
+    },
+    {
+        "Nom_P": "Salade Niçoise",
+        "Nom_I": "olives",
+        "Quantité": "50g"
+    },
+    {
+        "Nom_P": "Salade Niçoise",
+        "Nom_I": "thon",
+        "Quantité": "100g"
+    },
+    {
+        "Nom_P": "Sushi Assortiment",
+        "Nom_I": "algues",
+        "Quantité": "20g"
+    },
+    {
+        "Nom_P": "Sushi Assortiment",
+        "Nom_I": "poisson",
+        "Quantité": "150g"
+    },
+    {
+        "Nom_P": "Sushi Assortiment",
+        "Nom_I": "riz",
+        "Quantité": "200g"
+    },
+    {
+        "Nom_P": "Tajine d'Agneau",
+        "Nom_I": "agneau",
+        "Quantité": "300g"
+    },
+    {
+        "Nom_P": "Tajine d'Agneau",
+        "Nom_I": "amandes",
+        "Quantité": "50g"
+    },
+    {
+        "Nom_P": "Tajine d'Agneau",
+        "Nom_I": "pruneaux",
+        "Quantité": "100g"
+    },
+    {
+        "Nom_P": "Tarte aux pommes",
+        "Nom_I": "cannelle",
+        "Quantité": "1p"
+    },
+    {
+        "Nom_P": "Tarte aux pommes",
+        "Nom_I": "pommes",
+        "Quantité": "300g"
+    },
+    {
+        "Nom_P": "Tarte aux pommes",
+        "Nom_I": "sucre",
+        "Quantité": "50g"
+    },
+    {
+        "Nom_P": "Tiramisu",
+        "Nom_I": "café",
+        "Quantité": "50ml"
+    },
+    {
+        "Nom_P": "Tiramisu",
+        "Nom_I": "mascarpone",
+        "Quantité": "250g"
+    },
+    {
+        "Nom_P": "Tiramisu",
+        "Nom_I": "sucre",
+        "Quantité": "50g"
+    }
+]

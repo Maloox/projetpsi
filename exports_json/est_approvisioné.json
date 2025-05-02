@@ -1,0 +1,77 @@
+[
+    {
+        "Nom_P": "Boeuf Bourguignon",
+        "Référence": "3",
+        "Quantité": "35kg"
+    },
+    {
+        "Nom_P": "Couscous Royal",
+        "Référence": "1",
+        "Quantité": "40kg"
+    },
+    {
+        "Nom_P": "Crème Brûlée",
+        "Référence": "4",
+        "Quantité": "10kg"
+    },
+    {
+        "Nom_P": "Flan Pâtissier",
+        "Référence": "4",
+        "Quantité": "15kg"
+    },
+    {
+        "Nom_P": "Mousse au Chocolat",
+        "Référence": "6",
+        "Quantité": "10kg"
+    },
+    {
+        "Nom_P": "Paella Valenciana",
+        "Référence": "5",
+        "Quantité": "25kg"
+    },
+    {
+        "Nom_P": "Pizza Margherita",
+        "Référence": "5",
+        "Quantité": "25kg"
+    },
+    {
+        "Nom_P": "Quiche Lorraine",
+        "Référence": "3",
+        "Quantité": "30kg"
+    },
+    {
+        "Nom_P": "Raclette",
+        "Référence": "1",
+        "Quantité": "50kg"
+    },
+    {
+        "Nom_P": "Salade de fruit",
+        "Référence": "1",
+        "Quantité": "20kg"
+    },
+    {
+        "Nom_P": "Salade Niçoise",
+        "Référence": "2",
+        "Quantité": "20kg"
+    },
+    {
+        "Nom_P": "Sushi Assortiment",
+        "Référence": "7",
+        "Quantité": "20kg"
+    },
+    {
+        "Nom_P": "Tajine d'Agneau",
+        "Référence": "2",
+        "Quantité": "20kg"
+    },
+    {
+        "Nom_P": "Tarte aux pommes",
+        "Référence": "4",
+        "Quantité": "15kg"
+    },
+    {
+        "Nom_P": "Tiramisu",
+        "Référence": "6",
+        "Quantité": "15kg"
+    }
+]

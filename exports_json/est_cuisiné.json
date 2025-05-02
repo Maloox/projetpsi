@@ -1,0 +1,77 @@
+[
+    {
+        "Nom_P": "Boeuf Bourguignon",
+        "Code_Cuisinier": "1",
+        "Quantité": 2
+    },
+    {
+        "Nom_P": "Couscous Royal",
+        "Code_Cuisinier": "7",
+        "Quantité": 2
+    },
+    {
+        "Nom_P": "Crème Brûlée",
+        "Code_Cuisinier": "1",
+        "Quantité": 4
+    },
+    {
+        "Nom_P": "Flan Pâtissier",
+        "Code_Cuisinier": "3",
+        "Quantité": 3
+    },
+    {
+        "Nom_P": "Mousse au Chocolat",
+        "Code_Cuisinier": "2",
+        "Quantité": 5
+    },
+    {
+        "Nom_P": "Paella Valenciana",
+        "Code_Cuisinier": "3",
+        "Quantité": 2
+    },
+    {
+        "Nom_P": "Pizza Margherita",
+        "Code_Cuisinier": "6",
+        "Quantité": 3
+    },
+    {
+        "Nom_P": "Quiche Lorraine",
+        "Code_Cuisinier": "4",
+        "Quantité": 5
+    },
+    {
+        "Nom_P": "Raclette",
+        "Code_Cuisinier": "1",
+        "Quantité": 6
+    },
+    {
+        "Nom_P": "Salade de fruit",
+        "Code_Cuisinier": "1",
+        "Quantité": 6
+    },
+    {
+        "Nom_P": "Salade Niçoise",
+        "Code_Cuisinier": "7",
+        "Quantité": 3
+    },
+    {
+        "Nom_P": "Sushi Assortiment",
+        "Code_Cuisinier": "2",
+        "Quantité": 3
+    },
+    {
+        "Nom_P": "Tajine d'Agneau",
+        "Code_Cuisinier": "4",
+        "Quantité": 2
+    },
+    {
+        "Nom_P": "Tarte aux pommes",
+        "Code_Cuisinier": "5",
+        "Quantité": 4
+    },
+    {
+        "Nom_P": "Tiramisu",
+        "Code_Cuisinier": "6",
+        "Quantité": 4
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "Référence": "1",
+        "Nom": "Ferme Bio"
+    },
+    {
+        "Référence": "2",
+        "Nom": "Boucherie Artisanale"
+    },
+    {
+        "Référence": "3",
+        "Nom": "Boulangerie Traditionnelle"
+    },
+    {
+        "Référence": "4",
+        "Nom": "Marché Local"
+    },
+    {
+        "Référence": "5",
+        "Nom": "Fromagerie Artisanale"
+    },
+    {
+        "Référence": "6",
+        "Nom": "Épicerie Fine"
+    },
+    {
+        "Référence": "7",
+        "Nom": "Pâtisserie Gourmande"
+    }
+]

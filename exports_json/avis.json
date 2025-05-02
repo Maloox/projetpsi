@@ -1,0 +1,93 @@
+[
+    {
+        "ID_Retour": "1",
+        "Note": "5",
+        "Code_Cuisinier": "1",
+        "Code_Client": 1,
+        "Référence": "1"
+    },
+    {
+        "ID_Retour": "10",
+        "Note": "4",
+        "Code_Cuisinier": "6",
+        "Code_Client": 11,
+        "Référence": "5"
+    },
+    {
+        "ID_Retour": "11",
+        "Note": "5",
+        "Code_Cuisinier": "7",
+        "Code_Client": 13,
+        "Référence": "6"
+    },
+    {
+        "ID_Retour": "12",
+        "Note": "3",
+        "Code_Cuisinier": "6",
+        "Code_Client": 14,
+        "Référence": "5"
+    },
+    {
+        "ID_Retour": "13",
+        "Note": "4",
+        "Code_Cuisinier": "7",
+        "Code_Client": 16,
+        "Référence": "6"
+    },
+    {
+        "ID_Retour": "2",
+        "Note": "4",
+        "Code_Cuisinier": "1",
+        "Code_Client": 2,
+        "Référence": "2"
+    },
+    {
+        "ID_Retour": "3",
+        "Note": "3",
+        "Code_Cuisinier": "2",
+        "Code_Client": 3,
+        "Référence": "1"
+    },
+    {
+        "ID_Retour": "4",
+        "Note": "5",
+        "Code_Cuisinier": "3",
+        "Code_Client": 4,
+        "Référence": "2"
+    },
+    {
+        "ID_Retour": "5",
+        "Note": "2",
+        "Code_Cuisinier": "2",
+        "Code_Client": 5,
+        "Référence": "1"
+    },
+    {
+        "ID_Retour": "6",
+        "Note": "4",
+        "Code_Cuisinier": "4",
+        "Code_Client": 3,
+        "Référence": "3"
+    },
+    {
+        "ID_Retour": "7",
+        "Note": "5",
+        "Code_Cuisinier": "5",
+        "Code_Client": 6,
+        "Référence": "4"
+    },
+    {
+        "ID_Retour": "8",
+        "Note": "3",
+        "Code_Cuisinier": "4",
+        "Code_Client": 8,
+        "Référence": "3"
+    },
+    {
+        "ID_Retour": "9",
+        "Note": "4",
+        "Code_Cuisinier": "5",
+        "Code_Client": 9,
+        "Référence": "4"
+    }
+]
