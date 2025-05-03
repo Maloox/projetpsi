@@ -1,6 +1,6 @@
 ﻿using SkiaSharp;
 using System.Globalization;
-using System.Text; 
+using System.Text;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -9,7 +9,7 @@ using SkiaSharp;
 
 namespace projeta2
 {
-    internal class MetroMapGenerator
+    public class MetroMapGenerator
     {
         static Dictionary<int, (float X, float Y)> stations = new();
         static Dictionary<int, string> stationNames = new();
@@ -75,7 +75,7 @@ namespace projeta2
             }
         }
 
-        public void DrawMetroMap(string outputFile, List<int> path = null)
+        public void DrawMetroMap(string outputFile, List<int> path = null, int[] vertexColors = null)
         {
             float minX = float.MaxValue, minY = float.MaxValue, maxX = float.MinValue, maxY = float.MinValue;
             foreach (var station in stations.Values)
@@ -91,8 +91,7 @@ namespace projeta2
 
             using var bitmap = new SKBitmap(width, height);
             using var canvas = new SKCanvas(bitmap);
-            using var paintLine = new SKPaint { Color = SKColors.Black, StrokeWidth = 4 }; // Liens noirs
-            using var paintCircle = new SKPaint { Color = SKColors.Red, IsAntialias = true };
+            using var paintLine = new SKPaint { Color = SKColors.Black, StrokeWidth = 4 };
             using var paintText = new SKPaint { Color = SKColors.Black };
             using var typeface = SKTypeface.FromFamilyName("Arial");
             using var font = new SKFont(typeface, 14);
@@ -114,7 +113,7 @@ namespace projeta2
 
             if (path != null && path.Count > 1)
             {
-                using var pathPaint = new SKPaint { Color = SKColors.Blue, StrokeWidth = 6 }; // Bleu pour le chemin
+                using var pathPaint = new SKPaint { Color = SKColors.Blue, StrokeWidth = 6 };
                 for (int i = 0; i < path.Count - 1; i++)
                 {
                     int a = path[i];
@@ -126,20 +125,72 @@ namespace projeta2
                         float x2 = stations[b].X - minX + 200;
                         float y2 = stations[b].Y - minY + 200;
 
-                        canvas.DrawLine(x1, y1, x2, y2, pathPaint); // Dessiner en bleu
+                        canvas.DrawLine(x1, y1, x2, y2, pathPaint);
                     }
                 }
             }
 
+            HashSet<int> alreadyDrawnLabels = new();
+
             foreach (var station in stations)
             {
                 int stationId = station.Key;
-                float x = station.Value.X - minX + 200;
-                float y = station.Value.Y - minY + 200;
+                var basePos = station.Value;
 
+                List<int> overlapping = new();
+                foreach (var other in stations)
+                {
+                    if (Math.Abs(other.Value.X - basePos.X) < 0.01 &&
+                        Math.Abs(other.Value.Y - basePos.Y) < 0.01)
+                    {
+                        overlapping.Add(other.Key);
+                    }
+                }
+
+                int indexInGroup = overlapping.IndexOf(stationId);
+                int groupSize = overlapping.Count;
+
+                float radius = 5;
+                float angle = (float)(2 * Math.PI * indexInGroup / groupSize);
+                float offsetX = groupSize > 1 ? radius * (float)Math.Cos(angle) : 0;
+                float offsetY = groupSize > 1 ? radius * (float)Math.Sin(angle) : 0;
+
+                float x = basePos.X - minX + 200 + offsetX;
+                float y = basePos.Y - minY + 200 + offsetY;
+
+                SKColor nodeColor = SKColors.Green;
+                if (vertexColors != null && stationId - 1 < vertexColors.Length)
+                {
+                    int colorCode = vertexColors[stationId - 1];
+
+                    nodeColor = colorCode switch
+                    {
+                        0 => SKColors.Red,
+                        1 => SKColors.Green,
+                        2 => SKColors.Blue,
+                        3 => SKColors.Orange,
+                        4 => SKColors.Purple,
+                        _ => SKColors.Gray
+                    };
+                }
+
+                using var paintCircle = new SKPaint { Color = nodeColor, IsAntialias = true };
                 canvas.DrawCircle(x, y, 10, paintCircle);
-                canvas.DrawText(stationNames[stationId], x + 12, y + 6, SKTextAlign.Left, font, paintText);
+
+                if (!alreadyDrawnLabels.Contains(stationId) && overlapping[0] == stationId)
+                {
+                    float baseX = basePos.X - minX + 200;
+                    float baseY = basePos.Y - minY + 200;
+                    float labelOffsetX = 15;
+                    float labelOffsetY = 5;
+                    canvas.DrawText(stationNames[stationId], baseX + labelOffsetX, baseY + labelOffsetY, SKTextAlign.Left, font, paintText);
+
+                    foreach (int id in overlapping)
+                        alreadyDrawnLabels.Add(id);
+                }
             }
+
+
 
             using var image = SKImage.FromBitmap(bitmap);
             using var data = image.Encode(SKEncodedImageFormat.Png, 100);

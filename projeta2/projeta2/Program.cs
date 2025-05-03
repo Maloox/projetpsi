@@ -10,51 +10,43 @@ using SkiaSharp;
 using System;
 using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI.Common;
+using System.Xml.Serialization;
+using Mysqlx.Crud;
 
-
-    class Programme
+class Programme
     {
     static string chaineConnexion = "Server=localhost;Port=3306;Database=PSI;User Id=root;Password=malo;";
     static void Main()
         {
-
+        int debut = chaineConnexion.IndexOf("Password=");
+        debut+= "Password=".Length;
+        int fin = chaineConnexion.IndexOf(';', debut);
+        string motdepasse = chaineConnexion.Substring(debut, fin - debut);
+        
+        Serialiser();
         while (true)
+        {
+            Console.WriteLine("1. Connexion Client");
+            Console.WriteLine("2. Connexion Cuisinier");
+            Console.WriteLine("3. Connexion root");
+            string choix = Console.ReadLine();
+            Console.Clear();
+            switch (choix)
             {
-                Console.WriteLine("Choisissez une option :");
-                Console.WriteLine("1. Interface Client");
-                Console.WriteLine("2. Interface Cuisinier");
-                Console.WriteLine("3. Gestion des Commandes");
-                Console.WriteLine("4. Statistiques");
-                Console.WriteLine("5. Autre");
-                Console.WriteLine("6. Quittez");
-
-                string choix = Console.ReadLine();
-
-                switch (choix)
-                {
-                    case "1":
-                        CalculerEtMettreAJourMontantAchats();
-                        InterfaceClient();
-                        break;
-                    case "2":
-                        InterfaceCuisinier();
-                        break;
-                    case "3":
-                        GererCommandes();
-                        break;
-                    case "4":
-                        AfficherStatistiques();
-                        break;
-                    case "5":
-                        AfficherStatistiquesAutres();
-                        break;
-                    case "6":
-                        return;
-                    default:
-                        Console.WriteLine("Choix invalide. Veuillez réessayer.");
-                        break;
-                }
+                case "1":
+                    CalculerEtMettreAJourMontantAchats();
+                    InterfaceClient();
+                    break;
+                case "2":
+                    InterfaceCuisinier();
+                    break;
+                case "3":
+                    InterfaceRoot(motdepasse);
+                    break;
             }
+        }
+        
+        
         }
 
         static void CalculerEtMettreAJourMontantAchats()
@@ -97,42 +89,89 @@ using MySqlX.XDevAPI.Common;
                 }
             }
         }
-
-
-
-        static void InterfaceClient()
+        static void InterfaceRoot(string motdepasse)
         {
-            Console.Write("Entrez votre Code_Client : ");
-            int codeClient = int.Parse(Console.ReadLine());
+        Console.WriteLine("Entrez votre mot de passe:");
+        string mdp = Console.ReadLine();
+        if (mdp == motdepasse)
+        {
+            while (true)
+            {
+                Console.WriteLine("Choisissez une option :");
+                Console.WriteLine("1. Interface Client");
+                Console.WriteLine("2. Interface Cuisinier");
+                Console.WriteLine("3. Gestion des Commandes");
+                Console.WriteLine("4. Statistiques");
+                Console.WriteLine("5. Autre");
+                Console.WriteLine("6. Quittez");
 
+                string choix = Console.ReadLine();
+                Console.Clear();
+                switch (choix)
+                {
+                    case "1":
+                        CalculerEtMettreAJourMontantAchats();
+                        InterfaceClientRoot();
+                        break;
+                    case "2":
+                        InterfaceCuisinierRoot();
+                        break;
+                    case "3":
+                        GererCommandes();
+                        break;
+                    case "4":
+                        AfficherStatistiques();
+                        break;
+                    case "5":
+                        AfficherStatistiquesAutres();
+                        break;
+                    case "6":
+                        return;
+                    default:
+                        Console.WriteLine("Choix invalide. Veuillez réessayer.");
+                        break;
+                }
+            }
+        }
+        else
+            Console.WriteLine("Erreur: mauvais mot de passe.");
+    }
+
+
+    static void InterfaceClient()
+    {
+        Console.Write("Entrez votre Code_Client : ");
+        int codeClient = int.Parse(Console.ReadLine());
+        while (true)
+        {
             Console.WriteLine("Interface Client :");
             Console.WriteLine("1. Voir Profil");
             Console.WriteLine("2. Mettre à jour Profil");
             Console.WriteLine("3. Voir Commandes");
-            Console.WriteLine("4. Ajouter un Client");
-            Console.WriteLine("5. Supprimer un Client");
-            Console.WriteLine("6. Afficher Clients triés");
+            Console.WriteLine("4. Quittez");
 
             string choix = Console.ReadLine();
-
+            Console.Clear();
             switch (choix)
             {
-                case "1": VoirProfilClient(codeClient);
-                break;
-                case "2": MettreAJourProfilClient(codeClient);
-                break;
-                case "3": VoirCommandesClient(codeClient);
-                break;
-                case "4": AjouterClient();
-                break;
-                case "5": SupprimerClient();
-                break;
-                case "6": AfficherClientsTries();
-                break;
-                default: Console.WriteLine("Choix invalide. Veuillez réessayer.");
-                break;
+                case "1":
+                    VoirProfilClient(codeClient);
+                    break;
+                case "2":
+                    MettreAJourProfilClient(codeClient);
+                    break;
+                case "3":
+                    VoirCommandesClient(codeClient);
+                    break;
+                case "4":
+                    return;
+
+                default:
+                    Console.WriteLine("Choix invalide. Veuillez réessayer.");
+                    break;
             }
         }
+    }
 
 
         static void VoirProfilClient(int codeClient)
@@ -228,14 +267,16 @@ using MySqlX.XDevAPI.Common;
 
             Console.Write("Nom : "); string nom = Console.ReadLine();
             Console.Write("Prénom : "); string prenom = Console.ReadLine();
+            Console.Write("Numéro de rue : "); int numero = int.Parse(Console.ReadLine());
             Console.Write("Rue : "); string rue = Console.ReadLine();
             Console.Write("Ville : "); string ville = Console.ReadLine();
             Console.Write("Code Postal : "); int codePostal = int.Parse(Console.ReadLine());
             Console.Write("Téléphone : "); int tel = int.Parse(Console.ReadLine());
             Console.Write("Email : "); string email = Console.ReadLine();
+            Console.Write("id_Metro : "); int id_Metro = Convert.ToInt32(Console.ReadLine());
 
-            string requeteInsert = "INSERT INTO Client (Code_Client, Nom, Prenom, Rue, Ville, CodePostal, Tel, Email, MontantAchats) " +
-                                   "VALUES (@Code_Client, @Nom, @Prenom, @Rue, @Ville, @CodePostal, @Tel, @Email, 0)";
+            string requeteInsert = "INSERT INTO Client (Code_Client, Nom, Prenom, Rue, Ville, CodePostal, Tel, Email, MontantAchats,Id_Metro,Numero) " +
+                                   "VALUES (@Code_Client, @Nom, @Prenom, @Rue, @Ville, @CodePostal, @Tel, @Email, 0, @id_Metro,@numero)";
 
             using (MySqlCommand cmd = new MySqlCommand(requeteInsert, conn))
             {
@@ -247,6 +288,8 @@ using MySqlX.XDevAPI.Common;
                 cmd.Parameters.AddWithValue("@CodePostal", codePostal);
                 cmd.Parameters.AddWithValue("@Tel", tel);
                 cmd.Parameters.AddWithValue("@Email", email);
+                cmd.Parameters.AddWithValue("@Numero", numero);
+                cmd.Parameters.AddWithValue("@Id_Metro", id_Metro);
 
                 cmd.ExecuteNonQuery();
                 Console.WriteLine($"Client ajouté avec succès. Code_Client : {nouveauCodeClient}");
@@ -295,47 +338,127 @@ using MySqlX.XDevAPI.Common;
                 }
             }
         }
+    static void InterfaceCuisinierRoot()
+    {
+        Console.Write("Entrez votre Code_Cuisinier : ");
+        string codeCuisinier = Console.ReadLine();
 
-        static void InterfaceCuisinier()
+        Console.WriteLine("Interface Cuisinier :");
+        Console.WriteLine("1. Ajouter un Cuisinier");
+        Console.WriteLine("2. Modifier un Cuisinier");
+        Console.WriteLine("3. Supprimer un Cuisinier");
+        Console.WriteLine("4. Voir Clients Servis");
+        Console.WriteLine("5. Voir Plats Réalisés");
+        Console.WriteLine("6. Voir Plat du Jour");
+        Console.WriteLine("7. Quittez");
+        string choix = Console.ReadLine();
+        Console.Clear();
+        switch (choix)
         {
-            Console.Write("Entrez votre Code_Cuisinier : ");
-            string codeCuisinier = Console.ReadLine();
+            case "1":
+                AjouterCuisinier();
+                break;
+            case "2":
+                ModifierCuisinier();
+                break;
+            case "3":
+                DissocierCuisinier();
+                break;
+            case "4":
+                VoirClientsServis(codeCuisinier);
+                break;
+            case "5":
+                VoirPlatsRealises(codeCuisinier);
+                break;
+            case "6":
+                VoirPlatDuJour();
+                break;
+            case "7":
+                return;
+            default:
+                Console.WriteLine("Choix invalide. Veuillez réessayer.");
+                break;
+        }
+    }
+    static void InterfaceClientRoot()
+    {
+        Console.Write("Entrez votre Code_Client : ");
+        int codeClient = int.Parse(Console.ReadLine());
 
+        Console.WriteLine("Interface Client :");
+        Console.WriteLine("1. Voir Profil");
+        Console.WriteLine("2. Mettre à jour Profil");
+        Console.WriteLine("3. Voir Commandes");
+        Console.WriteLine("4. Ajouter un Client");
+        Console.WriteLine("5. Supprimer un Client");
+        Console.WriteLine("6. Afficher Clients triés");
+        Console.WriteLine("7. Quittez");
+        string choix = Console.ReadLine();
+        Console.Clear();
+
+        switch (choix)
+        {
+            case "1":
+                VoirProfilClient(codeClient);
+                break;
+            case "2":
+                MettreAJourProfilClient(codeClient);
+                break;
+            case "3":
+                VoirCommandesClient(codeClient);
+                break;
+            case "4":
+                AjouterClient();
+                break;
+            case "5":
+                SupprimerClient();
+                break;
+            case "6":
+                AfficherClientsTries();
+                break;
+            case "7":
+                return;
+            default:
+                Console.WriteLine("Choix invalide. Veuillez réessayer.");
+                break;
+        }
+    }
+    static void InterfaceCuisinier()
+    {
+        Console.Write("Entrez votre Code_Cuisinier : ");
+        string codeCuisinier = Console.ReadLine();
+        while (true)
+        {
             Console.WriteLine("Interface Cuisinier :");
-            Console.WriteLine("1. Ajouter un Cuisinier");
-            Console.WriteLine("2. Modifier un Cuisinier");
-            Console.WriteLine("3. Supprimer un Cuisinier");
-            Console.WriteLine("4. Voir Clients Servis");
-            Console.WriteLine("5. Voir Plats Réalisés");
-            Console.WriteLine("6. Voir Plat du Jour");
-
+            Console.WriteLine("1. Modifier un Cuisinier");
+            Console.WriteLine("2. Voir Clients Servis");
+            Console.WriteLine("3. Voir Plats Réalisés");
+            Console.WriteLine("4. Voir Plat du Jour");
+            Console.WriteLine("5. Quittez");
             string choix = Console.ReadLine();
 
             switch (choix)
             {
                 case "1":
-                    AjouterCuisinier();
+                    ModifierCuisinier(codeCuisinier);
                     break;
                 case "2":
-                    ModifierCuisinier();
-                    break;
-                case "3":
-                    DissocierCuisinier();
-                    break;
-                case "4":
                     VoirClientsServis(codeCuisinier);
                     break;
-                case "5":
+                case "3":
                     VoirPlatsRealises(codeCuisinier);
                     break;
-                case "6":
+                case "4":
                     VoirPlatDuJour();
                     break;
+                case "5":
+                    return;
                 default:
                     Console.WriteLine("Choix invalide. Veuillez réessayer.");
                     break;
             }
         }
+    }
 
     // fonction pour ajouter un cuisinier
     static void AjouterCuisinier()
@@ -422,11 +545,13 @@ using MySqlX.XDevAPI.Common;
 
 
     // fonction pour modifier un cuisinier et son client associe
-    static void ModifierCuisinier()
+    static void ModifierCuisinier(string code = "")
+        {
+        if (code == "")
         {
             Console.Write("Entrez le Code_Cuisinier à modifier : ");
-            string codeCuisinier = Console.ReadLine();
-
+            code = Console.ReadLine();
+        }
             // demander les informations a modifier pour le cuisinier et le client
             Console.Write("Entrez le nouveau Nom : ");
             string nouveauNom = Console.ReadLine();
@@ -450,7 +575,7 @@ using MySqlX.XDevAPI.Common;
 
                 using (MySqlCommand cmd = new MySqlCommand(requeteClient, conn))
                 {
-                    cmd.Parameters.AddWithValue("@Code_Cuisinier", codeCuisinier);
+                    cmd.Parameters.AddWithValue("@Code_Cuisinier", code);
                     cmd.Parameters.AddWithValue("@Nom", nouveauNom);
                     cmd.Parameters.AddWithValue("@Prenom", nouveauPrenom);
                     cmd.Parameters.AddWithValue("@Rue", nouvelleAdresseClient);
@@ -742,8 +867,8 @@ using MySqlX.XDevAPI.Common;
             }
         }
 
-        static void DeterminerCheminLivraison()
-        {
+    static void DeterminerCheminLivraison()
+    {
 
         Console.Write("Entrez ID_Commande pour déterminer le chemin de livraison : ");
         string idCommande = Console.ReadLine();
@@ -760,6 +885,9 @@ using MySqlX.XDevAPI.Common;
         Graphe<int> graphe = new Graphe<int>(matrice);
 
         int[,] matadj = graphe.matriceadj;
+
+        WelshPowell wp = new WelshPowell(matadj);
+        int[] colors = wp.ColorGraph();       
 
         PlusCourtChemin pcc = new PlusCourtChemin(matadj);
 
@@ -792,12 +920,12 @@ using MySqlX.XDevAPI.Common;
                             dest--;
                             src--;
 
-                            Console.WriteLine($"Station du client : {dest+1}");
-                            Console.WriteLine($"Station du cuisinier : {src+1}");
+                            Console.WriteLine($"Station du client : {dest + 1}");
+                            Console.WriteLine($"Station du cuisinier : {src + 1}");
 
                             string filename = Path.GetFullPath("../../metro_map.png");
                             var djResult = pcc.Dijkstra(src, dest);
-                            generator.DrawMetroMap(filename, djResult.Item1);
+                            generator.DrawMetroMap(filename, djResult.Item1, colors);
                             System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
                             { FileName = filename, UseShellExecute = true });
 
@@ -814,10 +942,10 @@ using MySqlX.XDevAPI.Common;
             }
         }
 
-        
+
     }
 
-        static void AfficherStatistiques()
+    static void AfficherStatistiques()
         {
             Console.WriteLine("Statistiques :");
             Console.WriteLine("1. Afficher Livraisons par Cuisinier");
@@ -1187,6 +1315,370 @@ using MySqlX.XDevAPI.Common;
             */
         }
         return matrice;
+    }   
+    static void Serialiser()
+    {
+        
+        ListeClient lc = new ListeClient();
+        using (MySqlConnection conn = new MySqlConnection(chaineConnexion))
+        {
+            conn.Open();
+            string query = "SELECT Code_Client, Nom, Prenom, Rue, Numero, CodePostal, Ville, Tel, Email, Id_Metro FROM Client";
+
+            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    Client client = new Client
+                    {
+                        CodeClient = reader.GetInt32("Code_Client"),
+                        Nom = reader.GetString("Nom"),
+                        Prenom = reader.GetString("Prenom"),
+                        Rue = reader.GetString("Rue"),
+                        IdMetro = reader.GetInt32("Id_Metro"),
+                        Numero = reader.GetInt32("Numero"),
+                        CodePostal = reader.GetInt32("CodePostal"),
+                        Ville = reader.GetString("Ville"),
+                        Tel = reader.GetInt32("Tel"),
+                        Email = reader.GetString("Email"),
+
+                    };
+                    lc.Ajouter(client);
+                }
+            }
+        }
+        XmlSerializer xs = new XmlSerializer(typeof(ListeClient));
+        StreamWriter wr = new StreamWriter("liste_client.xml");
+        xs.Serialize(wr, lc);
+        wr.Close();
+
+        ListePlat lp = new ListePlat();
+
+        using (MySqlConnection conn = new MySqlConnection(chaineConnexion))
+        {
+            conn.Open();
+            string query = "SELECT Nom_P, Nb_personnes, Date_Fabrication, Type, Date_péremption, Prix, Régime, Nature FROM Plat";
+
+            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    Plat plat = new Plat
+                    {
+                        NomP = reader.GetString("Nom_P"),
+                        DateFabrication = reader.GetString("Date_Fabrication"),
+                        Type = reader.GetString("Type"),
+                        DatePeremption = reader.GetString("Date_péremption"),
+                        Prix = reader.GetString("Prix"),
+                        Nature = reader.GetString("Nature")
+                    };
+                    if (reader["Nb_personnes"] == DBNull.Value)
+                    {
+                        plat.NbPersonnes = "N/C";
+                    }
+                    else
+                    {
+                        plat.NbPersonnes = reader.GetString("Nb_personnes");
+                    }
+                    if (reader["Régime"] == DBNull.Value)
+                    {
+                        plat.Regime = "N/C"; 
+                    }
+                    else
+                    {
+                        plat.Regime = reader.GetString("Régime");
+                    }
+
+                    lp.Ajouter(plat);
+                }
+            }
+        }
+
+        XmlSerializer xs1 = new XmlSerializer(typeof(ListePlat));
+        StreamWriter wr1 = new StreamWriter("liste_plat.xml");
+        xs1.Serialize(wr1, lp);
+        wr1.Close();
+
+        List<PlatDuJour> platsDuJour = new List<PlatDuJour>();
+
+        using (MySqlConnection conn = new MySqlConnection(chaineConnexion))
+        {
+            conn.Open();
+            string query = "SELECT Nom_P FROM PlatDuJour";
+
+            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    PlatDuJour plat = new PlatDuJour();
+                    plat.NomP = reader.GetString("Nom_P");
+                    platsDuJour.Add(plat);
+                }
+            }
+        }
+        XmlSerializer xs2 = new XmlSerializer(typeof(List<PlatDuJour>));
+        StreamWriter wr2 = new StreamWriter("plats_du_jour.xml");
+        xs2.Serialize(wr2, platsDuJour);
+        wr2.Close();
+
+
+        List<EntrepriseLocal> entreprises = new List<EntrepriseLocal>();
+        using (MySqlConnection conn = new MySqlConnection(chaineConnexion))
+        {
+            conn.Open();
+            string query = "SELECT Référence, Nom FROM Entreprise_local";
+            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    EntrepriseLocal entreprise = new EntrepriseLocal();
+                    entreprise.Reference = reader.GetString("Référence");
+                    entreprise.Nom = reader.GetString("Nom");
+                    entreprises.Add(entreprise);
+                }
+            }
+        }
+
+        XmlSerializer xs3 = new XmlSerializer(typeof(List<EntrepriseLocal>));
+        StreamWriter wr3 = new StreamWriter("entreprises_local.xml");
+        xs3.Serialize(wr3, entreprises);
+        wr3.Close();
+
+        List<Ingredient> ingredients = new List<Ingredient>();
+        using (MySqlConnection conn = new MySqlConnection(chaineConnexion))
+        {
+            conn.Open();
+            string query = "SELECT Nom_I FROM Ingrédient";
+
+            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    Ingredient ingredient = new Ingredient
+                    {
+                        NomI = reader.GetString("Nom_I")
+                    };
+                    ingredients.Add(ingredient);
+                }
+            }
+        }
+
+        XmlSerializer xs4 = new XmlSerializer(typeof(List<Ingredient>));
+
+        StreamWriter wr4 = new StreamWriter("ingredients.xml");
+        xs4.Serialize(wr4, ingredients);
+        wr4.Close();
+
+        List<Radie> radies = new List<Radie>();
+
+        using (MySqlConnection conn = new MySqlConnection(chaineConnexion))
+        {
+            conn.Open();
+            string query = "SELECT Code_Cl FROM Radié";
+
+            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    Radie radié = new Radie
+                    {
+                        CodeCl = reader.GetString("Code_Cl")
+                    };
+
+                    radies.Add(radié);
+                }
+            }
+        }
+
+        XmlSerializer xs5 = new XmlSerializer(typeof(List<Radie>));
+        StreamWriter wr5 = new StreamWriter("radie.xml");
+        xs5.Serialize(wr5, radies);
+        wr5.Close();
+
+        List<Avis> avisList = new List<Avis>();
+
+        using (MySqlConnection conn = new MySqlConnection(chaineConnexion))
+        {
+            conn.Open();
+            string query = "SELECT ID_Retour, Note, Code_Cuisinier, Code_Client, Référence FROM Avis";
+
+            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+            using (MySqlDataReader reader = cmd.ExecuteReader()){
+                while (reader.Read())
+                {
+                    Avis avis = new Avis
+                    {
+                        IdRetour = reader.GetString("ID_Retour"),
+                        Note = reader.GetString("Note"),
+                        CodeCuisinier = reader.GetString("Code_Cuisinier"),
+                        CodeClient = reader.GetInt32("Code_Client"),
+                        Reference = reader.GetString("Référence")
+
+                    };
+
+                    avisList.Add(avis);
+                }
+            }
+        }
+
+        XmlSerializer xs6 = new XmlSerializer(typeof(List<Avis>));
+        StreamWriter wr6 = new StreamWriter("avis.xml");
+        xs6.Serialize(wr6, avisList);
+        wr6.Close();
+
+        List<EstCuisine> estCuisinéList = new List<EstCuisine>();
+
+        using (MySqlConnection conn = new MySqlConnection(chaineConnexion))
+        {
+            conn.Open();
+            string query = "SELECT Nom_P, Code_Cuisinier, Quantité FROM est_cuisiné";
+
+            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    EstCuisine estCuisine = new EstCuisine
+                    {
+                        NomP = reader.GetString("Nom_P"),
+                        CodeCuisinier = reader.GetString("Code_Cuisinier"),
+                        Quantite = reader.GetInt32("Quantité")
+                    };
+
+                    estCuisinéList.Add(estCuisine);
+                }
+            }
+        }
+
+        XmlSerializer xs7 = new XmlSerializer(typeof(List<EstCuisine>));
+        StreamWriter wr7 = new StreamWriter("est_cuisine.xml");
+        xs7.Serialize(wr7, estCuisinéList);
+
+        wr7.Close();
+
+        List<EstCommande> estCommandeList = new List<EstCommande>();
+        using (MySqlConnection conn = new MySqlConnection(chaineConnexion))
+        {
+            conn.Open();
+            string query = "SELECT Nom_P, Code_Client, ID_Commande, Quantité FROM est_commandé";
+            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    EstCommande estCommande = new EstCommande
+                    {
+                        NomP = reader.GetString("Nom_P"),
+                        CodeClient = reader.GetInt32("Code_Client"),
+                        IdCommande = reader.GetString("ID_Commande"),
+                        Quantite = reader.GetInt32("Quantité")
+                    };
+
+                    estCommandeList.Add(estCommande);
+                }
+            }
+        }
+
+        XmlSerializer xs8 = new XmlSerializer(typeof(List<EstCommande>));
+        StreamWriter wr8 = new StreamWriter("est_commande.xml");
+        xs8.Serialize(wr8, estCommandeList);
+        wr8.Close();
+
+        List<EstApprovisione> liste = new List<EstApprovisione>();
+        using (MySqlConnection conn = new MySqlConnection(chaineConnexion))
+        {
+            conn.Open();
+            string query = "SELECT Nom_P, Référence, Quantité FROM est_approvisioné";
+
+            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    EstApprovisione ea = new EstApprovisione
+                    {
+                        NomP = reader.GetString("Nom_P"),
+                        Reference = reader.GetString("Référence"),
+                        Quantite = reader.GetString("Quantité")
+                    };
+                    liste.Add(ea);
+                }
+            }
+        }
+
+        XmlSerializer xs9 = new XmlSerializer(typeof(List<EstApprovisione>));
+        StreamWriter wr9 = new StreamWriter("est_approvisione.xml");
+        xs9.Serialize(wr9, liste);
+        wr9.Close();
+
+        List<EstCompose> listeec = new List<EstCompose>();
+
+        using (MySqlConnection conn = new MySqlConnection(chaineConnexion))
+        {
+            conn.Open();
+            string query = "SELECT Nom_P, Nom_I, Quantité FROM est_composé";
+
+            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    EstCompose ec = new EstCompose
+                    {
+                        NomP = reader.GetString("Nom_P"),
+                        NomI = reader.GetString("Nom_I"),
+                        Quantite = reader.GetString("Quantité")
+                    };
+                    listeec.Add(ec);
+                }
+            }
+        }
+
+        XmlSerializer xs10 = new XmlSerializer(typeof(List<EstCompose>));
+        StreamWriter wr10 = new StreamWriter("est_compose.xml");
+        xs10.Serialize(wr10, listeec);
+        wr10.Close();
+
+        ListeCuisinier lcuisinier = new ListeCuisinier();
+
+        using (MySqlConnection conn = new MySqlConnection(chaineConnexion))
+        {
+            conn.Open();
+            string query = "SELECT C.Code_Cuisinier, Cl.Nom, Cl.Prenom, Cl.Tel, Cl.Email, Cl.CodePostal, Cl.Id_Metro FROM Cuisinier C LEFT JOIN Client Cl ON C.Code_Cuisinier = Cl.Code_Cuisinier";
+
+            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    Cuisinier cuisinier = new Cuisinier
+                    {
+                        CodeCuisinier = reader.GetString("Code_Cuisinier"),
+                        NomClient = reader.GetString("Nom"),
+                        PrenomClient = reader.GetString("Prenom"),
+                        TelClient = reader.GetInt32("Tel"),
+                        EmailClient = reader.GetString("Email"),
+                        CodePostalClient = reader.GetInt32("CodePostal"),
+                        IdMetroClient = reader.GetInt32("Id_Metro")
+                    };
+                    lcuisinier.Ajouter(cuisinier);
+                }
+            }
+        }
+
+        XmlSerializer xs11 = new XmlSerializer(typeof(ListeCuisinier));
+        StreamWriter wr11 = new StreamWriter("liste_cuisinier.xml");
+        xs11.Serialize(wr11, lcuisinier);
+        wr11.Close();
     }
+
+
 }
 
