@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListePlat xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Liste>
+    <Plat>
+      <NomP>Boeuf Bourguignon</NomP>
+      <NbPersonnes>N/C</NbPersonnes>
+      <DateFabrication>18/01/2025</DateFabrication>
+      <Type>Plat</Type>
+      <DatePeremption>23/01/2025</DatePeremption>
+      <Prix>11</Prix>
+      <Regime>N/C</Regime>
+      <Nature>Française</Nature>
+    </Plat>
+    <Plat>
+      <NomP>Couscous Royal</NomP>
+      <NbPersonnes>N/C</NbPersonnes>
+      <DateFabrication>16/01/2025</DateFabrication>
+      <Type>Plat</Type>
+      <DatePeremption>21/01/2025</DatePeremption>
+      <Prix>12</Prix>
+      <Regime>N/C</Regime>
+      <Nature>Maghrébine</Nature>
+    </Plat>
+    <Plat>
+      <NomP>Crème Brûlée</NomP>
+      <NbPersonnes>N/C</NbPersonnes>
+      <DateFabrication>18/01/2025</DateFabrication>
+      <Type>Dessert</Type>
+      <DatePeremption>23/01/2025</DatePeremption>
+      <Prix>6</Prix>
+      <Regime>N/C</Regime>
+      <Nature>Française</Nature>
+    </Plat>
+    <Plat>
+      <NomP>Flan Pâtissier</NomP>
+      <NbPersonnes>N/C</NbPersonnes>
+      <DateFabrication>22/01/2025</DateFabrication>
+      <Type>Dessert</Type>
+      <DatePeremption>27/01/2025</DatePeremption>
+      <Prix>4</Prix>
+      <Regime>N/C</Regime>
+      <Nature>Française</Nature>
+    </Plat>
+    <Plat>
+      <NomP>Mousse au Chocolat</NomP>
+      <NbPersonnes>N/C</NbPersonnes>
+      <DateFabrication>20/01/2025</DateFabrication>
+      <Type>Dessert</Type>
+      <DatePeremption>25/01/2025</DatePeremption>
+      <Prix>5</Prix>
+      <Regime>N/C</Regime>
+      <Nature>Française</Nature>
+    </Plat>
+    <Plat>
+      <NomP>Paella Valenciana</NomP>
+      <NbPersonnes>N/C</NbPersonnes>
+      <DateFabrication>22/01/2025</DateFabrication>
+      <Type>Plat</Type>
+      <DatePeremption>27/01/2025</DatePeremption>
+      <Prix>14</Prix>
+      <Regime>N/C</Regime>
+      <Nature>Espagnole</Nature>
+    </Plat>
+    <Plat>
+      <NomP>Pizza Margherita</NomP>
+      <NbPersonnes>N/C</NbPersonnes>
+      <DateFabrication>14/01/2025</DateFabrication>
+      <Type>Plat</Type>
+      <DatePeremption>19/01/2025</DatePeremption>
+      <Prix>9</Prix>
+      <Regime>N/C</Regime>
+      <Nature>Italienne</Nature>
+    </Plat>
+    <Plat>
+      <NomP>Quiche Lorraine</NomP>
+      <NbPersonnes>N/C</NbPersonnes>
+      <DateFabrication>12/01/2025</DateFabrication>
+      <Type>Plat</Type>
+      <DatePeremption>17/01/2025</DatePeremption>
+      <Prix>8</Prix>
+      <Regime>N/C</Regime>
+      <Nature>Française</Nature>
+    </Plat>
+    <Plat>
+      <NomP>Raclette</NomP>
+      <NbPersonnes>N/C</NbPersonnes>
+      <DateFabrication>10/01/2025</DateFabrication>
+      <Type>Plat</Type>
+      <DatePeremption>15/01/2025</DatePeremption>
+      <Prix>10</Prix>
+      <Regime>N/C</Regime>
+      <Nature>Française</Nature>
+    </Plat>
+    <Plat>
+      <NomP>Salade de fruit</NomP>
+      <NbPersonnes>N/C</NbPersonnes>
+      <DateFabrication>10/01/2025</DateFabrication>
+      <Type>Dessert</Type>
+      <DatePeremption>15/01/2025</DatePeremption>
+      <Prix>5</Prix>
+      <Regime>Végétarien</Regime>
+      <Nature>Indifférent</Nature>
+    </Plat>
+    <Plat>
+      <NomP>Salade Niçoise</NomP>
+      <NbPersonnes>N/C</NbPersonnes>
+      <DateFabrication>16/01/2025</DateFabrication>
+      <Type>Entrée</Type>
+      <DatePeremption>21/01/2025</DatePeremption>
+      <Prix>6</Prix>
+      <Regime>N/C</Regime>
+      <Nature>Française</Nature>
+    </Plat>
+    <Plat>
+      <NomP>Sushi Assortiment</NomP>
+      <NbPersonnes>N/C</NbPersonnes>
+      <DateFabrication>20/01/2025</DateFabrication>
+      <Type>Plat</Type>
+      <DatePeremption>25/01/2025</DatePeremption>
+      <Prix>15</Prix>
+      <Regime>N/C</Regime>
+      <Nature>Japonaise</Nature>
+    </Plat>
+    <Plat>
+      <NomP>Tajine d'Agneau</NomP>
+      <NbPersonnes>N/C</NbPersonnes>
+      <DateFabrication>24/01/2025</DateFabrication>
+      <Type>Plat</Type>
+      <DatePeremption>29/01/2025</DatePeremption>
+      <Prix>13</Prix>
+      <Regime>N/C</Regime>
+      <Nature>Marocaine</Nature>
+    </Plat>
+    <Plat>
+      <NomP>Tarte aux pommes</NomP>
+      <NbPersonnes>N/C</NbPersonnes>
+      <DateFabrication>12/01/2025</DateFabrication>
+      <Type>Dessert</Type>
+      <DatePeremption>17/01/2025</DatePeremption>
+      <Prix>6</Prix>
+      <Regime>Végétarien</Regime>
+      <Nature>Indifférent</Nature>
+    </Plat>
+    <Plat>
+      <NomP>Tiramisu</NomP>
+      <NbPersonnes>N/C</NbPersonnes>
+      <DateFabrication>14/01/2025</DateFabrication>
+      <Type>Dessert</Type>
+      <DatePeremption>19/01/2025</DatePeremption>
+      <Prix>7</Prix>
+      <Regime>N/C</Regime>
+      <Nature>Italienne</Nature>
+    </Plat>
+  </Liste>
+</ListePlat>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfEstCommande xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EstCommande>
+    <NomP>Boeuf Bourguignon</NomP>
+    <CodeClient>10</CodeClient>
+    <IdCommande>9</IdCommande>
+    <Quantite>2</Quantite>
+  </EstCommande>
+  <EstCommande>
+    <NomP>Couscous Royal</NomP>
+    <CodeClient>8</CodeClient>
+    <IdCommande>7</IdCommande>
+    <Quantite>2</Quantite>
+  </EstCommande>
+  <EstCommande>
+    <NomP>Crème Brûlée</NomP>
+    <CodeClient>11</CodeClient>
+    <IdCommande>10</IdCommande>
+    <Quantite>4</Quantite>
+  </EstCommande>
+  <EstCommande>
+    <NomP>Flan Pâtissier</NomP>
+    <CodeClient>15</CodeClient>
+    <IdCommande>14</IdCommande>
+    <Quantite>3</Quantite>
+  </EstCommande>
+  <EstCommande>
+    <NomP>Mousse au Chocolat</NomP>
+    <CodeClient>13</CodeClient>
+    <IdCommande>12</IdCommande>
+    <Quantite>5</Quantite>
+  </EstCommande>
+  <EstCommande>
+    <NomP>Paella Valenciana</NomP>
+    <CodeClient>14</CodeClient>
+    <IdCommande>13</IdCommande>
+    <Quantite>2</Quantite>
+  </EstCommande>
+  <EstCommande>
+    <NomP>Pizza Margherita</NomP>
+    <CodeClient>6</CodeClient>
+    <IdCommande>5</IdCommande>
+    <Quantite>3</Quantite>
+  </EstCommande>
+  <EstCommande>
+    <NomP>Quiche Lorraine</NomP>
+    <CodeClient>4</CodeClient>
+    <IdCommande>3</IdCommande>
+    <Quantite>5</Quantite>
+  </EstCommande>
+  <EstCommande>
+    <NomP>Raclette</NomP>
+    <CodeClient>1</CodeClient>
+    <IdCommande>1</IdCommande>
+    <Quantite>6</Quantite>
+  </EstCommande>
+  <EstCommande>
+    <NomP>Salade de fruit</NomP>
+    <CodeClient>1</CodeClient>
+    <IdCommande>2</IdCommande>
+    <Quantite>6</Quantite>
+  </EstCommande>
+  <EstCommande>
+    <NomP>Salade Niçoise</NomP>
+    <CodeClient>9</CodeClient>
+    <IdCommande>8</IdCommande>
+    <Quantite>3</Quantite>
+  </EstCommande>
+  <EstCommande>
+    <NomP>Sushi Assortiment</NomP>
+    <CodeClient>12</CodeClient>
+    <IdCommande>11</IdCommande>
+    <Quantite>3</Quantite>
+  </EstCommande>
+  <EstCommande>
+    <NomP>Tajine d'Agneau</NomP>
+    <CodeClient>16</CodeClient>
+    <IdCommande>15</IdCommande>
+    <Quantite>2</Quantite>
+  </EstCommande>
+  <EstCommande>
+    <NomP>Tarte aux pommes</NomP>
+    <CodeClient>5</CodeClient>
+    <IdCommande>4</IdCommande>
+    <Quantite>4</Quantite>
+  </EstCommande>
+  <EstCommande>
+    <NomP>Tiramisu</NomP>
+    <CodeClient>7</CodeClient>
+    <IdCommande>6</IdCommande>
+    <Quantite>4</Quantite>
+  </EstCommande>
+</ArrayOfEstCommande>

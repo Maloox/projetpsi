@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfEstApprovisione xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EstApprovisione>
+    <NomP>Boeuf Bourguignon</NomP>
+    <Reference>3</Reference>
+    <Quantite>35kg</Quantite>
+  </EstApprovisione>
+  <EstApprovisione>
+    <NomP>Couscous Royal</NomP>
+    <Reference>1</Reference>
+    <Quantite>40kg</Quantite>
+  </EstApprovisione>
+  <EstApprovisione>
+    <NomP>Crème Brûlée</NomP>
+    <Reference>4</Reference>
+    <Quantite>10kg</Quantite>
+  </EstApprovisione>
+  <EstApprovisione>
+    <NomP>Flan Pâtissier</NomP>
+    <Reference>4</Reference>
+    <Quantite>15kg</Quantite>
+  </EstApprovisione>
+  <EstApprovisione>
+    <NomP>Mousse au Chocolat</NomP>
+    <Reference>6</Reference>
+    <Quantite>10kg</Quantite>
+  </EstApprovisione>
+  <EstApprovisione>
+    <NomP>Paella Valenciana</NomP>
+    <Reference>5</Reference>
+    <Quantite>25kg</Quantite>
+  </EstApprovisione>
+  <EstApprovisione>
+    <NomP>Pizza Margherita</NomP>
+    <Reference>5</Reference>
+    <Quantite>25kg</Quantite>
+  </EstApprovisione>
+  <EstApprovisione>
+    <NomP>Quiche Lorraine</NomP>
+    <Reference>3</Reference>
+    <Quantite>30kg</Quantite>
+  </EstApprovisione>
+  <EstApprovisione>
+    <NomP>Raclette</NomP>
+    <Reference>1</Reference>
+    <Quantite>50kg</Quantite>
+  </EstApprovisione>
+  <EstApprovisione>
+    <NomP>Salade de fruit</NomP>
+    <Reference>1</Reference>
+    <Quantite>20kg</Quantite>
+  </EstApprovisione>
+  <EstApprovisione>
+    <NomP>Salade Niçoise</NomP>
+    <Reference>2</Reference>
+    <Quantite>20kg</Quantite>
+  </EstApprovisione>
+  <EstApprovisione>
+    <NomP>Sushi Assortiment</NomP>
+    <Reference>7</Reference>
+    <Quantite>20kg</Quantite>
+  </EstApprovisione>
+  <EstApprovisione>
+    <NomP>Tajine d'Agneau</NomP>
+    <Reference>2</Reference>
+    <Quantite>20kg</Quantite>
+  </EstApprovisione>
+  <EstApprovisione>
+    <NomP>Tarte aux pommes</NomP>
+    <Reference>4</Reference>
+    <Quantite>15kg</Quantite>
+  </EstApprovisione>
+  <EstApprovisione>
+    <NomP>Tiramisu</NomP>
+    <Reference>6</Reference>
+    <Quantite>15kg</Quantite>
+  </EstApprovisione>
+</ArrayOfEstApprovisione>

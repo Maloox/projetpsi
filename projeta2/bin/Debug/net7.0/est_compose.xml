@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfEstCompose xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EstCompose>
+    <NomP>Boeuf Bourguignon</NomP>
+    <NomI>boeuf</NomI>
+    <Quantite>300g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Boeuf Bourguignon</NomP>
+    <NomI>carottes</NomI>
+    <Quantite>100g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Couscous Royal</NomP>
+    <NomI>légumes</NomI>
+    <Quantite>300g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Couscous Royal</NomP>
+    <NomI>semoule</NomI>
+    <Quantite>200g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Couscous Royal</NomP>
+    <NomI>viande</NomI>
+    <Quantite>200g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Crème Brûlée</NomP>
+    <NomI>crème fraîche</NomI>
+    <Quantite>200g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Crème Brûlée</NomP>
+    <NomI>sucre</NomI>
+    <Quantite>50g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Flan Pâtissier</NomP>
+    <NomI>oeufs</NomI>
+    <Quantite>3p</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Flan Pâtissier</NomP>
+    <NomI>sucre</NomI>
+    <Quantite>100g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Mousse au Chocolat</NomP>
+    <NomI>chocolat</NomI>
+    <Quantite>100g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Mousse au Chocolat</NomP>
+    <NomI>oeufs</NomI>
+    <Quantite>2p</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Paella Valenciana</NomP>
+    <NomI>poulet</NomI>
+    <Quantite>200g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Paella Valenciana</NomP>
+    <NomI>riz</NomI>
+    <Quantite>300g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Paella Valenciana</NomP>
+    <NomI>safran</NomI>
+    <Quantite>1g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Pizza Margherita</NomP>
+    <NomI>basilic</NomI>
+    <Quantite>5g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Pizza Margherita</NomP>
+    <NomI>mozzarella</NomI>
+    <Quantite>150g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Pizza Margherita</NomP>
+    <NomI>tomates</NomI>
+    <Quantite>100g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Quiche Lorraine</NomP>
+    <NomI>crème fraîche</NomI>
+    <Quantite>200g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Quiche Lorraine</NomP>
+    <NomI>lardons</NomI>
+    <Quantite>100g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Quiche Lorraine</NomP>
+    <NomI>oeufs</NomI>
+    <Quantite>3p</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Raclette</NomP>
+    <NomI>cornichon</NomI>
+    <Quantite>3p</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Raclette</NomP>
+    <NomI>jambon</NomI>
+    <Quantite>200g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Raclette</NomP>
+    <NomI>pommes_de_terre</NomI>
+    <Quantite>200g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Raclette</NomP>
+    <NomI>raclette fromage</NomI>
+    <Quantite>250g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Salade de fruit</NomP>
+    <NomI>fraise</NomI>
+    <Quantite>100g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Salade de fruit</NomP>
+    <NomI>kiwi</NomI>
+    <Quantite>100g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Salade de fruit</NomP>
+    <NomI>sucre</NomI>
+    <Quantite>10g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Salade Niçoise</NomP>
+    <NomI>haricots verts</NomI>
+    <Quantite>100g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Salade Niçoise</NomP>
+    <NomI>olives</NomI>
+    <Quantite>50g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Salade Niçoise</NomP>
+    <NomI>thon</NomI>
+    <Quantite>100g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Sushi Assortiment</NomP>
+    <NomI>algues</NomI>
+    <Quantite>20g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Sushi Assortiment</NomP>
+    <NomI>poisson</NomI>
+    <Quantite>150g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Sushi Assortiment</NomP>
+    <NomI>riz</NomI>
+    <Quantite>200g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Tajine d'Agneau</NomP>
+    <NomI>agneau</NomI>
+    <Quantite>300g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Tajine d'Agneau</NomP>
+    <NomI>amandes</NomI>
+    <Quantite>50g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Tajine d'Agneau</NomP>
+    <NomI>pruneaux</NomI>
+    <Quantite>100g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Tarte aux pommes</NomP>
+    <NomI>cannelle</NomI>
+    <Quantite>1p</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Tarte aux pommes</NomP>
+    <NomI>pommes</NomI>
+    <Quantite>300g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Tarte aux pommes</NomP>
+    <NomI>sucre</NomI>
+    <Quantite>50g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Tiramisu</NomP>
+    <NomI>café</NomI>
+    <Quantite>50ml</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Tiramisu</NomP>
+    <NomI>mascarpone</NomI>
+    <Quantite>250g</Quantite>
+  </EstCompose>
+  <EstCompose>
+    <NomP>Tiramisu</NomP>
+    <NomI>sucre</NomI>
+    <Quantite>50g</Quantite>
+  </EstCompose>
+</ArrayOfEstCompose>

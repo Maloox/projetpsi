@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfRadie xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Radie>
+    <CodeCl>10</CodeCl>
+  </Radie>
+  <Radie>
+    <CodeCl>19</CodeCl>
+  </Radie>
+  <Radie>
+    <CodeCl>25</CodeCl>
+  </Radie>
+  <Radie>
+    <CodeCl>7</CodeCl>
+  </Radie>
+</ArrayOfRadie>

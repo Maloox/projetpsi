@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfEstCuisine xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EstCuisine>
+    <NomP>Boeuf Bourguignon</NomP>
+    <CodeCuisinier>1</CodeCuisinier>
+    <Quantite>2</Quantite>
+  </EstCuisine>
+  <EstCuisine>
+    <NomP>Couscous Royal</NomP>
+    <CodeCuisinier>7</CodeCuisinier>
+    <Quantite>2</Quantite>
+  </EstCuisine>
+  <EstCuisine>
+    <NomP>Crème Brûlée</NomP>
+    <CodeCuisinier>1</CodeCuisinier>
+    <Quantite>4</Quantite>
+  </EstCuisine>
+  <EstCuisine>
+    <NomP>Flan Pâtissier</NomP>
+    <CodeCuisinier>3</CodeCuisinier>
+    <Quantite>3</Quantite>
+  </EstCuisine>
+  <EstCuisine>
+    <NomP>Mousse au Chocolat</NomP>
+    <CodeCuisinier>2</CodeCuisinier>
+    <Quantite>5</Quantite>
+  </EstCuisine>
+  <EstCuisine>
+    <NomP>Paella Valenciana</NomP>
+    <CodeCuisinier>3</CodeCuisinier>
+    <Quantite>2</Quantite>
+  </EstCuisine>
+  <EstCuisine>
+    <NomP>Pizza Margherita</NomP>
+    <CodeCuisinier>6</CodeCuisinier>
+    <Quantite>3</Quantite>
+  </EstCuisine>
+  <EstCuisine>
+    <NomP>Quiche Lorraine</NomP>
+    <CodeCuisinier>4</CodeCuisinier>
+    <Quantite>5</Quantite>
+  </EstCuisine>
+  <EstCuisine>
+    <NomP>Raclette</NomP>
+    <CodeCuisinier>1</CodeCuisinier>
+    <Quantite>6</Quantite>
+  </EstCuisine>
+  <EstCuisine>
+    <NomP>Salade de fruit</NomP>
+    <CodeCuisinier>1</CodeCuisinier>
+    <Quantite>6</Quantite>
+  </EstCuisine>
+  <EstCuisine>
+    <NomP>Salade Niçoise</NomP>
+    <CodeCuisinier>7</CodeCuisinier>
+    <Quantite>3</Quantite>
+  </EstCuisine>
+  <EstCuisine>
+    <NomP>Sushi Assortiment</NomP>
+    <CodeCuisinier>2</CodeCuisinier>
+    <Quantite>3</Quantite>
+  </EstCuisine>
+  <EstCuisine>
+    <NomP>Tajine d'Agneau</NomP>
+    <CodeCuisinier>4</CodeCuisinier>
+    <Quantite>2</Quantite>
+  </EstCuisine>
+  <EstCuisine>
+    <NomP>Tarte aux pommes</NomP>
+    <CodeCuisinier>5</CodeCuisinier>
+    <Quantite>4</Quantite>
+  </EstCuisine>
+  <EstCuisine>
+    <NomP>Tiramisu</NomP>
+    <CodeCuisinier>6</CodeCuisinier>
+    <Quantite>4</Quantite>
+  </EstCuisine>
+</ArrayOfEstCuisine>

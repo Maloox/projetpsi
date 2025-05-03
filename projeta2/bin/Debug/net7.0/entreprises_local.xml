@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfEntrepriseLocal xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntrepriseLocal>
+    <Reference>1</Reference>
+    <Nom>Ferme Bio</Nom>
+  </EntrepriseLocal>
+  <EntrepriseLocal>
+    <Reference>2</Reference>
+    <Nom>Boucherie Artisanale</Nom>
+  </EntrepriseLocal>
+  <EntrepriseLocal>
+    <Reference>3</Reference>
+    <Nom>Boulangerie Traditionnelle</Nom>
+  </EntrepriseLocal>
+  <EntrepriseLocal>
+    <Reference>4</Reference>
+    <Nom>Marché Local</Nom>
+  </EntrepriseLocal>
+  <EntrepriseLocal>
+    <Reference>5</Reference>
+    <Nom>Fromagerie Artisanale</Nom>
+  </EntrepriseLocal>
+  <EntrepriseLocal>
+    <Reference>6</Reference>
+    <Nom>Épicerie Fine</Nom>
+  </EntrepriseLocal>
+  <EntrepriseLocal>
+    <Reference>7</Reference>
+    <Nom>Pâtisserie Gourmande</Nom>
+  </EntrepriseLocal>
+</ArrayOfEntrepriseLocal>
